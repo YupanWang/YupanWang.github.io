@@ -61,6 +61,14 @@
 Parameterizing Variations of human shapes and motions is a long-standing problem in computer graphics and vision. Most of the existing methods only deal with a specific kind of motion, such as body poses, facial expressions, or hand gestures. We propose PanoMan (sParse locAlized compoNents based mOdel for full huMAn motioNs) to handle shape variation and full-motion across body, face, and hand in a unified framework. Like previous approaches, we factor shape variation into principal components to obtain a human shape space that approximates the shape of arbitrary identity. We then analyze sparse localized components in terms of relative edge length and dihedral angle to capture full motions of body poses, facial expressions, and hand gestures. The final piece of our model is a multilayer perceptron (MLP) that fits the residual between the ground truth and the aforementioned two-level approximation. As an application, we employ the discrete-shell deformation to drive the model to fit sparse constraints such as joint positions and surface feature points. We thoroughly evaluate PanoMan on body, face, and hand motion benchmarks as well as scanned data. The existing skinning-based techniques suffer from joint collapsing when encountering twisting motion of joints. Experiments show that PanoMan can capture all kinds of full human motions with high quality and is easier than the state-of-the-art models in recovering poses with wide joint twisting and complex hand gestures.
 </p>
   
+  
+<h2><a id="pipeline" href="#top">Pipeline</a></h2>
+<p id="abssec">
+ The pipeline of computing the parametric model for human dynamic geometries of full motion: (a–d) show, respectively, the shape, body pose, face expression, and hand gesture databases that we used to compose our training data (e); (f) show some shape PCA bases and sparse localized components for poses, expressions, and gestures extracted from the shape and motion databases in (e); (g) an MLP learned from (e) and (f); (h) average shape (i) specific shape  (j) a specific pose of (i); (k) correction of (j).
+  </p>
+<a href="fig_teaser.png"><img src="fig_model_pipeline.png" alt="Teaser" id="teaser" width = "70%" style = "margin-top: 20px;"></a>
+</div>
+  
 <h2><a id="downloads" href="#top">Downloads</a></h2>
 <ul>
 <li><a href="./panoman.pdf" target="_blank">Paper [pdf, 14.1M]</a></li>
